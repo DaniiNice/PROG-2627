@@ -1,53 +1,49 @@
-arbolesLista = []
-arboles = int(input("Numero de arboles: "))
+nombres = []
+puntuaciones = []
+generos = []
+bucle = True
 
-for i in range(1, arboles + 1):
-    arbolesLista.append(input(f"Tipo del Arbol {i} (A/B): ").upper())
-    arbolesLista.append(int(input(f"Diametro del Arbol {i}: ")))
-    arbolesLista.append(int(input(f"Altura del Arbol {i}: ")))
+while bucle:
+    print("""Selecciona una de las siguientes opciones (R, E, S)
+    R. Registrar juegos
+    E. Mostrar estadísticas
+    P. Mejor Puntuación
+    S. Salir del programa""")
 
-    if arbolesLista[-3] == "B":
-        arbolesLista.append(int(input(f"Edad del arbol {i}: ")))
-        print(arbolesLista[-4:])
-    else:
-        print(arbolesLista[-3:])
+    opcion = input("Opcion: ").upper()
 
-maximo = arbolesLista[2]
-minimo = arbolesLista[2]
-pos = arbolesLista[2]
-edadMedia = 0
-num = 0
-m30 = 0
+    match opcion:
+        case "R":
+            print("Registrando")
+            juegos = int(input("Cuantos juegos quieres registrar: "))
 
-for i in range(len(arbolesLista)):
-    if type(arbolesLista[i]) is str:
-        if maximo <= arbolesLista[i + 2]:
-            maximo = arbolesLista[i + 2]
-            pos = i + 2
-        elif minimo >= arbolesLista[i + 2]:
-            minimo = arbolesLista[i + 2]
+            for i in range(1, juegos + 1):
+                nombres.append(input(f"Nombre del juego ({i}/{juegos}): "))
+                puntuaciones.append(float(input(f"Puntuacion del juego ({i}/{juegos}): ")))
+                generos.append(input(f"Genero del juego ({i}/{juegos}): "))
 
-        if arbolesLista[i + 2] > 30:
-            m30 += 1
+        case "E":
+            print("Estadísticas")
+            print("Tu colección de juegos PSP:")
 
-    if arbolesLista[i] == "B":
-        num += arbolesLista[i + 3]
-        edadMedia = num / arboles
+            for i in range(len(nombres)):
+                print(f"{nombres[i]} | Puntuacion: {puntuaciones[i]} | Genero: {generos[i]}")
 
-print(f"La altura máxima es {maximo}m.")
-print(f"La altura mínima es {minimo}m.")
-print(f"La media de edad para los de tipo B es {edadMedia} años")
-print(f"Existen {m30} árboles en total de más de 30 m.")
+        case "P":
+            print("Mayor puntuacion")
+            mayor_puntuacion = puntuaciones[0]
+            indice_mayor = 0
 
-if arbolesLista[pos - 2] == "B":
-    print(f"Los datos de la altura máxima: {arbolesLista[pos - 2:pos + 2]}")
-else:
-    print(f"Los datos de la altura máxima: {arbolesLista[pos - 2:pos + 1]}")
+            for i in range(len(nombres)):
+                if puntuaciones[i] > mayor_puntuacion:
+                    mayor_puntuacion = puntuaciones[i]
+                    indice_mayor = i
 
-print("Resumen de todos los arboles: ")
+            print(f"{nombres[indice_mayor]} | Puntuacion: {puntuaciones[indice_mayor]} | Genero: {generos[indice_mayor]}")
 
-for i in range(len(arbolesLista)):
-    if arbolesLista[i] == "A":
-        print(arbolesLista[i:i + 3])
-    elif arbolesLista[i] == "B":
-        print(arbolesLista[i:i + 4])
+        case "S":
+            print("fin")
+            bucle = False
+
+        case _:
+            print("Opcion no valida. Intentelo de nuevo")
