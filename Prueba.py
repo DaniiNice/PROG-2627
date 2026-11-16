@@ -1,3 +1,4 @@
-num = input("Dime una frase: ")
+import inspect
+import random
 
-print(len(num))
+print(inspect.getsource(random))

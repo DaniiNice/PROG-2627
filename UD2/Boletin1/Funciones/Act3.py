@@ -5,5 +5,4 @@ def calculaTemperaturaMedia (maxima, minima):
 maxima = int(input("Dime la temperatura maxima: "))
 minima = int(input("Dime la temperatura minima: "))
 resultado = calculaTemperaturaMedia(maxima, minima)
-
 print(resultado)
