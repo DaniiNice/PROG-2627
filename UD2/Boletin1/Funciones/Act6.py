@@ -1,4 +1,4 @@
-def calcularMax (numeros):
+def calcularMax(numeros):
     maximo = numeros[0]
 
     for i in range(1, len(numeros)):
@@ -7,7 +7,7 @@ def calcularMax (numeros):
 
     return maximo
 
-def calcularLista ():
+def calcularLista():
     numerosN = []
 
     for i in range(1, 11):

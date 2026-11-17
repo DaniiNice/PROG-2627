@@ -1,4 +1,4 @@
-def nombrefuncion (x, y):
+def nombrefuncion(x, y):
     suma = x + y
     print(suma)
     return suma

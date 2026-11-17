@@ -1,6 +1,6 @@
 bucle = True
 
-def menu ():
+def menu():
     print("""======== Convertidor ========
     1. Convertir a Segundos
     2. Convertir a Minutos
@@ -8,11 +8,11 @@ def menu ():
     (-1) Salir del programa
 ===============================""")
 
-def convertirMinutos (segundosE):
+def convertirMinutos(segundosE):
     minutos = segundosE // 60
     return minutos
 
-def convertirHoras (minutosE):
+def convertirHoras(minutosE):
     horas = minutosE // 3600
     return horas
 

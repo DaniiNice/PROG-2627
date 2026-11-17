@@ -1,4 +1,4 @@
-def ConvertirEspaciado (text):
+def ConvertirEspaciado(text):
     cadena = ""
 
     for i in range(len(text)):

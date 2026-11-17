@@ -1,8 +1,8 @@
-def convertirMinutos (segundosE):
+def convertirMinutos(segundosE):
     minutos = segundosE // 60
     return minutos
 
-def convertirHoras (minutosE):
+def convertirHoras(minutosE):
     horas = minutosE // 3600
     return horas
 

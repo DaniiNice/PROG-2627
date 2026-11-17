@@ -1,4 +1,4 @@
-def calculaTemperaturaMedia (maximaE, minimaE):
+def calculaTemperaturaMedia(maximaE, minimaE):
     media = (minimaE + maximaE) / 2
     return media
 
