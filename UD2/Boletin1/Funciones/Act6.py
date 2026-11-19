@@ -4,7 +4,6 @@ def calcularMax(numeros):
     for i in range(1, len(numeros)):
         if numeros[i] > maximo:
             maximo = numeros[i]
-
     return maximo
 
 def calcularLista():
@@ -12,7 +11,6 @@ def calcularLista():
 
     for i in range(1, 11):
         numerosN.append(int(input(f"Dime el numero {i}: ")))
-
     return numerosN
 
 listaN = calcularLista()
